@@ -243,8 +243,6 @@ test_cases = [
 ]
 Correct is 28/28 
 
-
-```json
 With test case 2:
 test_cases = [
     {"text": "I can't say I didn't enjoy it.", "label": 1},
