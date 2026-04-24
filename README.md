@@ -197,6 +197,10 @@ This highlighted the limitations of:
 * Fine-tuning on simple sentiment labels
 
 ---
+## Training Loop
+I set up epochs is 3
+
+The last eval is {'eval_loss': 0.36054855585098267, 'eval_accuracy': 0.8570666666666666, 'eval_f1': 0.8570576701940783, 'eval_runtime': 51.0621, 'eval_samples_per_second': 587.52, 'eval_steps_per_second': 18.37, 'epoch': 3.0}
 
 ## Results
 
