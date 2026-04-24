@@ -244,8 +244,7 @@ test_cases = [
     {"text": "Even though the packaging looked premium, the product failed within hours and I regret buying it.", "label": 0}
 ]
 Result is 28/28 correct
-### Test Case 1
-```python
+
 With test case 2:
 test_cases = [
     {"text": "I can't say I didn't enjoy it.", "label": 1},
