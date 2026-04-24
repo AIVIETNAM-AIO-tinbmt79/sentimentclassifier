@@ -201,6 +201,107 @@ This highlighted the limitations of:
 ## Results
 
 The final model achieved good performance on standard sentiment classification examples and demonstrated that the fine-tuning pipeline was implemented successfully.
+With test case 1: 
+test_cases = [
+    {"text": "I absolutely love this product, it works perfectly.", "label": 1},
+    {"text": "This is the best purchase I've made this year.", "label": 1},
+    {"text": "The movie was not bad at all.", "label": 1},
+    {"text": "I didn't hate it.", "label": 1},
+    {"text": "Not the best, but still enjoyable.", "label": 1},
+    {"text": "The product has some flaws, but overall I'm satisfied.", "label": 1},
+    {"text": "It took a while to arrive, but the quality is amazing.", "label": 1},
+    {"text": "The app has bugs, but I still like using it.", "label": 1},
+    {"text": "I was worried at first, but it turned out great.", "label": 1},
+    {"text": "The food wasn't amazing, but I liked it.", "label": 1},
+
+    {"text": "I hate this product.", "label": 0},
+    {"text": "This is the worst thing I have ever bought.", "label": 0},
+    {"text": "The movie was not good.", "label": 0},
+    {"text": "I didn't like it.", "label": 0},
+    {"text": "It looks nice, but it works terribly.", "label": 0},
+    {"text": "The design is beautiful, but the quality is awful.", "label": 0},
+    {"text": "It started well, but became disappointing.", "label": 0},
+    {"text": "I wanted to love it, but it was terrible.", "label": 0},
+    {"text": "The service was friendly, but completely useless.", "label": 0},
+    {"text": "It isn't the worst, but I regret buying it.", "label": 0},
+
+    {"text": "Great, it broke on the first day.", "label": 0},
+    {"text": "Wonderful, another bug appeared.", "label": 0},
+    {"text": "Amazing, now nothing works.", "label": 0},
+    {"text": "Fantastic, it crashed again.", "label": 0},
+
+    {"text": "I thought it would be bad, but it was actually pretty good.", "label": 1},
+    {"text": "I expected something great, but it was disappointing.", "label": 0},
+
+    {"text": "Although the shipping was late, the product quality exceeded my expectations and I am very happy with it.", "label": 1},
+    {"text": "Even though the packaging looked premium, the product failed within hours and I regret buying it.", "label": 0},
+]
+Correct is 28/28 
+
+
+With test case 2:
+test_cases = [
+    {"text": "I can't say I didn't enjoy it.", "label": 1},
+    {"text": "It's not impossible to like this.", "label": 1},
+    {"text": "I don't think it's not bad.", "label": 1},
+    {"text": "I wouldn't say it was good.", "label": 0},
+
+    # =========================
+    # SARCASM
+    # =========================
+    {"text": "Great job, now the app won't even open.", "label": 0},
+    {"text": "Fantastic, another update that breaks everything.", "label": 0},
+    {"text": "Lovely, my order arrived broken again.", "label": 0},
+    {"text": "Amazing service, they ignored me for a week.", "label": 0},
+
+    # =========================
+    # CONTRAST SHIFT
+    # =========================
+    {"text": "The design is beautiful, but everything else is terrible.", "label": 0},
+    {"text": "The beginning was boring, but the ending was amazing.", "label": 1},
+    {"text": "It sounds promising, but it fails miserably.", "label": 0},
+    {"text": "It started badly, but turned out wonderful.", "label": 1},
+
+    # =========================
+    # MIXED SENTIMENT
+    # =========================
+    {"text": "I love the features, but I hate the performance.", "label": 0},
+    {"text": "The performance is terrible, but I still love it.", "label": 1},
+    {"text": "The food was awful, but the dessert saved the night.", "label": 1},
+    {"text": "The support was helpful, but the product is unusable.", "label": 0},
+
+    # =========================
+    # IMPLIED SENTIMENT
+    # =========================
+    {"text": "I expected better.", "label": 0},
+    {"text": "I've had worse.", "label": 1},
+    {"text": "That could have gone better.", "label": 0},
+    {"text": "It wasn't exactly a pleasant experience.", "label": 0},
+
+    # =========================
+    # POSITIVE WORDS BUT NEGATIVE MEANING
+    # =========================
+    {"text": "The app is insanely good at crashing.", "label": 0},
+    {"text": "This product is perfect for wasting money.", "label": 0},
+    {"text": "Excellent, it broke instantly.", "label": 0},
+
+    # =========================
+    # NEGATIVE WORDS BUT POSITIVE MEANING
+    # =========================
+    {"text": "This movie was wicked good.", "label": 1},
+    {"text": "That performance was insanely good.", "label": 1},
+    {"text": "This cake is ridiculously delicious.", "label": 1},
+
+    # =========================
+    # LONG CONTEXT REVERSAL
+    # =========================
+    {"text": "Although I was frustrated at first, after using it for a while I ended up loving it.", "label": 1},
+    {"text": "Even though the first impression was great, after a few days it became unusable.", "label": 0},
+    {"text": "At first I hated the interface, but now I can't live without it.", "label": 1},
+    {"text": "I thought I would love it, but it ended up being a complete waste.", "label": 0},
+]
+
+Through these test cases, it can be observed that the model may make incorrect predictions on long or tricky inputs because the training data is relatively simple and not diverse enough
 
 ### Key outcomes:
 
