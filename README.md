@@ -304,6 +304,7 @@ test_cases = [
     {"text": "At first I hated the interface, but now I can't live without it.", "label": 1},
     {"text": "I thought I would love it, but it ended up being a complete waste.", "label": 0},
 ]
+result 23/28 
 
 Through these test cases, it can be observed that the model may make incorrect predictions on long or tricky inputs because the training data is relatively simple and not diverse enough
 
