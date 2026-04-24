@@ -205,6 +205,7 @@ The last eval is {'eval_loss': 0.36054855585098267, 'eval_accuracy': 0.857066666
 ## Results
 
 The final model achieved good performance on standard sentiment classification examples and demonstrated that the fine-tuning pipeline was implemented successfully.
+
 With test case 1: 
 test_cases = [
     {"text": "I absolutely love this product, it works perfectly.", "label": 1},
@@ -241,6 +242,7 @@ test_cases = [
     {"text": "Even though the packaging looked premium, the product failed within hours and I regret buying it.", "label": 0},
 ]
 Correct is 28/28 
+
 
 
 With test case 2:
