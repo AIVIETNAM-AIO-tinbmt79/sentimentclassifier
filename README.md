@@ -206,7 +206,9 @@ The last eval is {'eval_loss': 0.36054855585098267, 'eval_accuracy': 0.857066666
 
 The final model achieved good performance on standard sentiment classification examples and demonstrated that the fine-tuning pipeline was implemented successfully.
 ```json
-With test case 1: 
+### Test Case 1
+
+```python
 test_cases = [
     {"text": "I absolutely love this product, it works perfectly.", "label": 1},
     {"text": "This is the best purchase I've made this year.", "label": 1},
@@ -239,10 +241,11 @@ test_cases = [
     {"text": "I expected something great, but it was disappointing.", "label": 0},
 
     {"text": "Although the shipping was late, the product quality exceeded my expectations and I am very happy with it.", "label": 1},
-    {"text": "Even though the packaging looked premium, the product failed within hours and I regret buying it.", "label": 0},
+    {"text": "Even though the packaging looked premium, the product failed within hours and I regret buying it.", "label": 0}
 ]
-Correct is 28/28 
-
+Result is 28/28 correct
+### Test Case 1
+```python
 With test case 2:
 test_cases = [
     {"text": "I can't say I didn't enjoy it.", "label": 1},
@@ -304,10 +307,10 @@ test_cases = [
     {"text": "At first I hated the interface, but now I can't live without it.", "label": 1},
     {"text": "I thought I would love it, but it ended up being a complete waste.", "label": 0},
 ]
-result 23/28 
+Result is 23/28 correct 
 
 Through these test cases, it can be observed that the model may make incorrect predictions on long or tricky inputs because the training data is relatively simple and not diverse enough
-```text
+
 ### Key outcomes:
 
 * Built a complete fine-tuning pipeline for sentiment classification
